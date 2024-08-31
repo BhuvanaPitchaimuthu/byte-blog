@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+  
+<%- include('header.ejs') %>
+  <body>
+    <!-- header session -->
+    <%- include('title.ejs') %>
+    <main>
+        <!-- new post  -->
+         <div class="new-and-edit-blog-form">
+          <form method="post"  action="/new-post" class="blog-form">
+            <label for="title" class="label">Title</label>
+            <input id="title" type="text" name="title" class="blog-input" required>
+            <label for="content" class="label">Content</label>
+            <textarea name="content" id="content" required  class="blog-input"></textarea>
+            <label for="author" class="label">Author</label>
+            <input id="author" type="text" name="author"  class="blog-input" required>
+            <label for="category" class="label">Category</label>
+            <select name="category" id="category"  class="blog-input" required>
+              <option value="space" name="space" selected>Space Science</option>
+              <option value="tech" name="tech">Technology</option>
+              <option value="food" name="food">Food and Cooking</option>
+              <option value="health" name="health">Health</option>
+              <option value="arts" name="arts">Arts</option>
+              <option value="env" name="env">Environment</option>
+              <option value="other" name="other">Other</option>
+            </select>
+            <button class="btn new-post-button">Submit</button>
+          </form>
+         </div>
+      
+    </main>
+
+    <!-- footer session -->
+    <%- include('footer.ejs') %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.tiny.cloud/1/3kq1ml3t27btuy18cjtga21acvcvk92glmbwl5uikjmtc1nl/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    </script>
+  </script>
+  </body>
+</html>

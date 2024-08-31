@@ -1,0 +1,46 @@
+sql query used:
+
+CREATE TABLE posts (
+   postid serial PRIMARY KEY,
+	title VARCHAR(100) NOT NULL,
+	content VARCHAR(500) NOT NULL,
+	author VARCHAR(50) NOT NULL,
+	category VARCHAR(50) NOT NULL,
+	creation_date DATE NOT NULL 
+)
+
+
+insert into posts (title, content, author, creation_date, category) values('Exploring the Infinite: The Future of Space Travel','As we continue to push the boundaries of human exploration, space travel represents not just a technological challenge but a profound quest for our place in the cosmos. From the first steps on the Moon to future missions to Mars, the journey ahead promises to unveil the mysteries of the universe and redefine our understanding of existence.',
+						'Stephen Hawking','2024-06-23', 'space' );
+
+
+insert into posts (title, content, author, creation_date, category)
+values('The Technological Renaissance: Innovations Shaping Our Future','In the 21st century, technology has become the cornerstone of progress, revolutionizing industries and everyday life. From artificial intelligence to quantum computing, the advancements in technology are not only transforming our current capabilities but are also paving the way for unprecedented future innovations.', 'Isaac Asimov', '2024-06-23', 'tech');
+
+insert into posts (title, content, author, creation_date, category)
+values('Culinary Alchemy: The Science of Flavor','Cooking is a delicate dance of chemistry and artistry, where the right combination of ingredients can create culinary magic. By understanding the science behind flavors and cooking techniques, we can elevate our food from mere sustenance to an exquisite sensory experience.', ' Julia Child', '2024-06-23','food' );
+
+insert into posts (title, content, author, creation_date, category)
+values('The Path to Wellness: Balancing Mind, Body, and Spirit', 'Health is not just the absence of illness but a harmonious balance of physical, mental, and spiritual well-being. By embracing holistic practices and modern medicine, we can achieve a state of wellness that enhances our quality of life and fosters longevity.','Deepak Chopra', '2024-06-23','health' );
+
+insert into posts (title, content, author, creation_date, category)
+values('The Art of Expression: Understanding the Power of Creativity','Art transcends mere aesthetics; it is a powerful medium for expressing the human experience. Through painting, music, literature, and other forms of art, we communicate our emotions, challenge societal norms, and inspire change. It is through creativity that we explore the depths of our souls and connect with others.', 'Vincent van Gogh', '2024-06-23', 'arts');
+
+insert into posts (title, content, author, creation_date, category)
+values('Guardians of Our Planet: The Urgent Call for Environmental Stewardship','Our planet faces unprecedented challenges due to climate change and environmental degradation. It is imperative that we adopt sustainable practices to preserve our natural resources and ensure a habitable world for future generations. The time for action is now, as we work together to protect and restore our environment.', 'Rachel Carson', '2024-06-23', 'env');
+
+insert into posts (title, content, author, creation_date, category)
+values('Innovation and Tradition: The Role of Culture in Shaping Our World','Culture is the lens through which we view the world, shaping our values, traditions, and innovations. It is through the interplay of cultural heritage and modern advancements that societies evolve, creating a dynamic and ever-changing landscape of human experience.','Joseph Campbell', '2024-06-23','other' );
+
+ALTER TABLE posts 
+RENAME postid TO id
+
+
+CREATE TABLE newsletter (
+   news_id SERIAL NOT NULL UNIQUE,
+	email VARCHAR(50) UNIQUE
+);
+
+
+
+

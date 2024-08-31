@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('header.ejs') %>
+
+  <body>
+    <!-- header session -->
+    <%- include('title.ejs') %>
+    <!-- main session -->
+    <main>
+      <div class="main-blog-session">
+        <!-- all blogs goes here -->
+        <div class="blog-session">
+          <% if (locals.posts) %> <% { %> <% posts.forEach(post => { %>
+          <div class="blog-card">
+            <div class="card" style="width: 18rem">
+              <% let randomNumber = Math.floor(Math.random() * 11) %>
+              <img
+                src="styles/blog_<%=randomNumber%>.png"
+                class="card-img-top"
+                alt="blog image"
+              />
+              <div class="card-body">
+                <h5 class="card-title"><%=post.title %></h5>
+                <p class="card-text"><%= post.author %></p>
+                <% let currentDatelist = new
+                Date(post.creation_date).toLocaleDateString('en-IN', { day:
+                '2-digit', month: '2-digit', year: 'numeric' }).split('/') %> <%
+                let creationDateOfPost =
+                `${currentDatelist[2]}-${currentDatelist[1]}-${currentDatelist[0]}`%>
+                <p class="card-text"><%= creationDateOfPost %></p>
+                <div class="options">
+                  <a href="/content/<%= post.author %>/<%= post.id %>"
+                    >Learn more >
+                  </a>
+                  <a href="/edit/<%= post.id %>" class="edit-option">Edit</a>
+                  <a href="/delete/<%= post.id %>">Delete </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% }) %> <% } %>
+        </div>
+      </div>
+
+      <!-- news letter -->
+    </main>
+    <!-- footer -->
+    <%- include('footer.ejs') %>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+      referrerpolicy="origin"
+    ></script>
+  </body>
+</html>

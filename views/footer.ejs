@@ -1,0 +1,24 @@
+<footer>
+  <div class="news-letter">
+    <h3>Newsletter</h3>
+    <form action="/news-letter" method="post" class="newsletter-form">
+      <label for="email">Email Address:*</label>
+      <input type="email" class="email newsletter-email" name="email" />
+      <div class="e-check">
+        <input type="checkbox" class="email-checkbox" value="email" />
+        <label for="email-checkbox"
+          >I would like to receive emails from Byte Blogs</label
+        >
+      </div>
+      <button class="btn newsletter-button" name="email">Submit</button>
+    </form>
+  </div>
+
+  <div class="copyright">
+    <% let year = new Date().getFullYear() %>
+    <p>
+      🌟 Crafting Digital Experiences with Passion & Precision 🚀 | © by
+      <span>Bhuvana</span> ❤️|  <%= year %>
+    </p>
+  </div>
+</footer>
